@@ -34,6 +34,9 @@ class ForeCast{
 
 app.get('/weather',getWeather)
 
+app.get('/', (req, res) => {
+    res.send('Home Route')
+})
 
 
 
