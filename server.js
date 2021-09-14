@@ -9,7 +9,7 @@ const weatherInfo=require('./data/weather.json');
 const PORT=process.env.PORT;
 
 app.listen(PORT, ()=>{
-    console.log("Hello world");
+    // console.log("Hello world");
 })
 
 
@@ -17,15 +17,16 @@ app.listen(PORT, ()=>{
 app.get('/weather',(req,res)=>{
     let lat=Number(req.query.lat);
     let lon=Number(req.query.lon);
-
+    let searchQuery = req.query.display_name;
     
-    if (lat&&lon){
+    if (lat&&lon||searchQuery){
         let cityValue=[];
         weatherInfo.find(item=>{
-            if(item.lat===lat&&item.lon===lon){
+            if(item.lat===lat&&item.lon===lon || searchQuery===item.searchQuery){
                 cityValue.push(item)
             }
         })
+        console.log(searchQuery);
         let city=cityValue[0];
         if (cityValue.length>0){
             let foreCast=city.data.map(item=>{
