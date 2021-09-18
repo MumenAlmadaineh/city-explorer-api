@@ -21,7 +21,7 @@
 ## Credit and Collaborations
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
 
-Name of feature: 3
+Name of feature: MVC
 
 Estimate of time needed to complete: 6 hours
 
